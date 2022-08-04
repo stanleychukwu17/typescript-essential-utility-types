@@ -1,4 +1,4 @@
-import { User } from "./Users";
+import { User } from "./users";
 
 /**
 Parameters<Type>
@@ -13,7 +13,7 @@ type CreateUserInput = Parameters<typeof createUser>;
 const data: CreateUserInput = ["stanley", "123456789"]
 
 // call the function below
-createUser(...data)
+createUser(...data) // destructure the array and leaves u with something like createUser("stanley", "123456789")
 
 // another example using an object
 
