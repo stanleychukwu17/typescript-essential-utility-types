@@ -1,4 +1,4 @@
-import { User } from "./Users";
+import { User } from "./users";
 
 /**
 Partial<Type>
@@ -6,7 +6,7 @@ Constructs a type with all properties of Type set to optional
 */
 
 type UserPartial = Partial<User>;
-// this is mainly used when tying the props of an input where almost all the fields are optional
+// this is mainly used when typing the props of an input where all the fields are optional
 // if we wanted the name of the input to be mandatory, we could do:
 type UserPartial_1 = Partial<User> & { name: string }
 

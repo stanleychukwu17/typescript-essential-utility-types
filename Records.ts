@@ -1,8 +1,8 @@
-import { User } from "./Users";
+import { User } from "./users";
 
 /**
 Record<Key, Type>
-Constructs and object type whose property keys are Keys and whose property values are Type.
+Constructs an object type whose property keys are Keys and whose property values are Type.
 This utility can be used to map the properties of a Type to another Type
 This utility is mainly used for objects, but the teacher says he uses it a lot when writing a reduce function
 examples below:
@@ -51,3 +51,32 @@ const result = snacks.reduce((
 }, {})
 
 console.log(result)
+
+// let me refactor the code above: to below:
+
+type snacksProps = {
+    name: string, price: number
+}
+const snacks_2:snacksProps[] = [
+    {
+        name: "Meat pie",
+        price: 350
+    },
+    {
+        name: "Donut",
+        price: 150
+    }
+]
+
+const result_2 = snacks.reduce((
+        accumulator: Record<string, snacksProps>,
+        current,
+        index
+    ) => {
+        accumulator[String(index)] = {
+            ...current,
+        }
+        return accumulator
+}, {})
+
+console.log(result_2)
