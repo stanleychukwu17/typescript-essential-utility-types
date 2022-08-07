@@ -8,6 +8,7 @@ function createUser(username: string, password: string) {
     return {username, password}
 }
 
+// hover over createUserInput to see the result
 type CreateUserInput = Parameters<typeof createUser>;
 
 const data: CreateUserInput = ["stanley", "123456789"]
