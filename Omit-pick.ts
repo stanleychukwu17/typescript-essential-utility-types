@@ -16,6 +16,12 @@ Constructs a type by picking only the set of properties 'Keys' provided as argum
 */
 type userProfilePick = Pick<User, "phone" | "name" | "email">
 
+// this one is from me, you can make every of the value required, you can do either of the 2 below, hover on each type to see the final result
+type userProfilePick_1 = Required<userProfilePick>
+type userProfilePick_2 = Required<Pick<User, "phone" | "name" | "email">>
+type userProfilePick_3 = Partial<userProfilePick>
+
+
 /**
 When should you use Pick or Omit?
 With Omit: The thing is if a new property is added to the User interface, they won't be omitted when a new request is made
