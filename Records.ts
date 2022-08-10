@@ -16,7 +16,7 @@ const users: Record<string, number> = {
 
 const data: Record<string, {
     name: string,
-    age: number,
+    age: number
 }> = {
     'firstPerson': {
         age: 25,
@@ -39,6 +39,7 @@ const snacks = [
     }
 ]
 
+// hope you'll understand what we've done below
 const result = snacks.reduce((
         accumulator: Record<string, {name:string, price:number}>,
         current,
@@ -53,7 +54,6 @@ const result = snacks.reduce((
 console.log(result)
 
 // let me refactor the code above: to below:
-
 type snacksProps = {
     name: string, price: number
 }
