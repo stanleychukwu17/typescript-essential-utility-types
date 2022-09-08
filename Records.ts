@@ -71,7 +71,7 @@ const snacks_2:snacksProps[] = [
 const result_2 = snacks.reduce((
         accumulator: Record<string, snacksProps>,
         current: snacksProps, // hover over current from the example above(i.e the teacher's example) to see it's value
-        index
+        index: number
     ) => {
         accumulator[String(index)] = {
             ...current,
