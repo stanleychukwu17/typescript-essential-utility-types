@@ -50,7 +50,7 @@ as usual hover over both answers to see their results
 type CreateUserResult = ReturnType<typeof createUser>
 type CreateUserResult_1 = ReturnType<typeof createUser_1>
 
-// if you have an sync function, do the below, CreateUserResult_3 is the right answer, but hover over both answers to see the difference
+// if you have an async function, do the below, CreateUserResult_3 is the right answer, but hover over both answers to see the difference
 async function createUser_2 ({username, password}: {username: string, password: string}) {
     return {username, password, secret:true}
 }
