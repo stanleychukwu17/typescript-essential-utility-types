@@ -3,17 +3,20 @@ import { User } from "./users";
 /**
 Record<Key, Type>
 Constructs an object type whose property keys are Keys and whose property values are Type.
-This utility can be used to map the properties of a Type to another Type
+This utility can be used to map the types of one object to another object
 This utility is mainly used for objects, but the teacher says he uses it a lot when writing a reduce function
 examples below:
 */
 
+// Record<string, number> means we want an object which it's 'keys' are 'type of string' and it's 'values' are 'type of number'
 const users: Record<string, number> = {
     'age': 25,
     'year-of-birth':1993,
     'target-age-to-live-before-death':120, // only if my wife is alive until then
 }
 
+// Record<string, {name: string, age: number}> means we want an object where the 'key is a string' and the 'value is an object',
+// the object in turn should contain 'precise keys of name and age', then the values should be of type 'spring and number'
 const data: Record<string, {
     name: string,
     age: number
@@ -29,14 +32,8 @@ Using it in a reduce function
 Lets say we wanted to convert the array below to an object using the reduce function
 */
 const snacks = [
-    {
-        name: "Meat pie",
-        price: 350
-    },
-    {
-        name: "Donut",
-        price: 150
-    }
+    {name: "Meat pie", price: 350},
+    {name: "Donut", price: 150}
 ]
 
 // hope you'll understand what we've done below
