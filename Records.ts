@@ -10,7 +10,7 @@ examples below:
 
 // Record<string, number> means we want an object which it's 'keys' are 'type of string' and it's 'values' are 'type of number'
 const users: Record<string, number> = {
-    'age': 25,
+    'age': 23,
     'year-of-birth':1993,
     'target-age-to-live-before-death':120, // only if my wife is alive until then
 }
@@ -32,8 +32,8 @@ Using it in a reduce function
 Lets say we wanted to convert the array below to an object using the reduce function
 */
 const snacks = [
-    {name: "Meat pie", price: 350},
-    {name: "Donut", price: 150}
+    {name: "Meat pie", price: 350},// boy things have gone up now, meat-pie is now #500
+    {name: "Donut", price: 150} // and donut is now #200
 ]
 
 // hope you'll understand what we've done below
