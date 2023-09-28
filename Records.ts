@@ -21,7 +21,7 @@ const data: Record<string, {
     name: string,
     age: number
 }> = {
-    'firstPerson': {
+    'first-Person': {
         age: 25,
         name: 'stanley'
     }
@@ -36,7 +36,23 @@ const snacks = [
     {name: "Donut", price: 150} // and donut is now #200
 ]
 
-// hope you'll understand what we've done below
+// hope you'll understand what we've done below, otherwise expand the explanation below to understand why we used <b> accumulator: Record<string, {name:string, price:number}> </b>
+/**
+    when i was doing some revisions later on, it was a bit difficult for me to understand what was going on with the reduce function, but after some research with chatGPT, it's easier to understand.
+    So accumulator: Record<string, {name:string, price:number}> it telling typescript that the accumulator is going to be an object that looks like this:
+        {
+            'index_key_string': {
+                name: 'a_value_of_type_string',
+                price: a_value_of_type_number
+            }
+        }
+    
+    when we console the final result, we would have:
+        {
+            "0": { name: "Meat pie", price: 350 },
+            "1": { name: "Donut", price: 150 }
+        }
+*/
 const result = snacks.reduce((
         accumulator: Record<string, {name:string, price:number}>,
         current,
@@ -66,12 +82,13 @@ const snacks_2:snacksProps[] = [
 ]
 
 const result_2 = snacks.reduce((
-        accumulator: Record<string, snacksProps>,
+        accumulator: Record<string, snacksProps & {available: boolean}>,
         current: snacksProps, // hover over current from the example above(i.e the teacher's example) to see it's value
         index: number
     ) => {
         accumulator[String(index)] = {
             ...current,
+            available: true,
         }
         return accumulator
 }, {})
